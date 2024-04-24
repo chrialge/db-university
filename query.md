@@ -27,9 +27,9 @@ SELECT \* FROM `courses` WHERE cfu > 10;
 
 ## task 3
 
-<!-- cerco solochi ha piu  -->
+<!-- cerco solo  gli studenti che hanno piu di 30 -->
 
-SELECT \* FROM `students` WHERE date_of_birth BETWEEN '1994-04-24' AND '2024-04-24';
+SELECT \* FROM `students` WHERE date_of_birth BETWEEN '1990-01-02' AND '1993-04-24';
 
 ## task 4
 
@@ -54,3 +54,9 @@ SELECT \* FROM `degrees` WHERE level = 'magistrale';
 <!-- mi dice quanti dipartimenti a l'univerita -->
 
 SELECT COUNT(\*) FROM `departments`;
+
+## task 8
+
+<!--  mi dice quanti insegnanti non ha il numero di telfono -->
+
+SELECT COUNT(\*) FROM `teachers` WHERE phone IS NULL;
