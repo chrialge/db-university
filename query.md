@@ -20,3 +20,13 @@ Dopo aver testato le vostre query con phpMyAdmin, riportatele in un file query.m
 SELECT \* FROM `students` WHERE date_of_birth LIKE '1990%';
 
 ## task2
+
+<!-- seleziono tute le colonne della tabella e cerco nella colonna cfu chi e sopra i 10 -->
+
+SELECT \* FROM `courses` WHERE cfu > 10;
+
+## task 3
+
+SELECT \* FROM `students` WHERE date_of_birth BETWEEN '1994-04-24' AND '2024-04-24';
+
+## task 4
