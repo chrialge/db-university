@@ -27,12 +27,30 @@ SELECT \* FROM `courses` WHERE cfu > 10;
 
 ## task 3
 
+<!-- cerco solochi ha piu  -->
+
 SELECT \* FROM `students` WHERE date_of_birth BETWEEN '1994-04-24' AND '2024-04-24';
 
 ## task 4
 
-<!--  selezziona tutte le colonne della tabella e cerca solo chi e del primo semestre e del primo anno -->
+<!--  selezziona tutte le colonne della tabella courses e cerca solo i corsi del primo semestre e del primo anno -->
 
 SELECT \* FROM `courses` WHERE period = 'I semestre' AND year = 1;
 
 ## task 5
+
+<!-- seleziono tutte le tabelle exams cerco solo gliesami del 20/06/20020 dopo le 14 -->
+
+SELECT \* FROM `exams` WHERE date = '2020-06-20' AND hour BETWEEN '14:00:00' AND '24:00:00';
+
+## task 6
+
+<!-- seleziona tutti i corsi di laura di level magistral -->
+
+SELECT \* FROM `degrees` WHERE level = 'magistrale';
+
+## task 7
+
+<!-- mi dice quanti dipartimenti a l'univerita -->
+
+SELECT COUNT(\*) FROM `departments`;
