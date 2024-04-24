@@ -30,3 +30,9 @@ SELECT \* FROM `courses` WHERE cfu > 10;
 SELECT \* FROM `students` WHERE date_of_birth BETWEEN '1994-04-24' AND '2024-04-24';
 
 ## task 4
+
+<!--  selezziona tutte le colonne della tabella e cerca solo chi e del primo semestre e del primo anno -->
+
+SELECT \* FROM `courses` WHERE period = 'I semestre' AND year = 1;
+
+## task 5
