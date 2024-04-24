@@ -27,7 +27,7 @@ SELECT \* FROM `courses` WHERE cfu > 10;
 
 ## task 3
 
-<!-- cerco solo  gli studenti che hanno piu di 30 -->
+<!-- cerco solo  gli studenti che hanno piu di 30 (risultati: 515)-->
 
 SELECT \* FROM `students` WHERE date_of_birth BETWEEN '1990-01-02' AND '1993-04-24';
 
