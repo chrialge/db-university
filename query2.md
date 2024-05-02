@@ -96,5 +96,27 @@ AND `degrees`.`level` = 'magistrale';
 <!-- Selezionare tutti i corsi in cui insegna Fulvio Amato  -->
 
 ```SQL
+SELECT *
+FROM `course_teacher`
+JOIN `courses` ON `courses`.`id` = `course_teacher`.`course_id`
+WHERE `course_teacher`.`teacher_id` = 44;
+```
+
+# Task 4
+
+<!-- Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui sono iscritti e il relativo dipartimento, in ordine alfabetico per cognome e nome -->
+
+```SQL
+SELECT `students`.`surname`, `students`.`name` , `degrees`.`*`
+FROM `students`
+JOIN `degrees` ON `degrees`.`id` = `students`.`degree_id`
+ORDER BY `students`.`surname`, `students`.`name`;
+```
+
+# Task 5
+
+<!-- Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti -->
+
+```SQL
 
 ```
