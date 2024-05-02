@@ -22,6 +22,10 @@ FROM `students`
 WHERE `date_of_birth`
 LIKE '1990%';
 
+SELECT \*
+FROM `student`
+WHERE YEAR(`date_of_birth`) = 1990;
+
 ## task2
 
 <!-- seleziono tute le colonne della tabella e cerco nella colonna cfu chi e sopra i 10 -->
@@ -40,6 +44,29 @@ SELECT \*
 FROM `students`
 WHERE YEAR(`date_of_birth`) < 1994;
 
+SELECT \*
+FROM `students`
+WHERE YEAR(CURRENT_DATE()) - YEAR(`date_of_birth`) > 30;
+
+SELECT \*
+FROM `students`
+WHERE TIMESTAMPDIFF(YEAR, `date_of_birth`, CURDATE()) >=30
+ORDER BY `students`, `date_of_birth` DESC;
+
+SELECT \*
+FROM `students`
+WHERE YEAR(CURRENT_DATE()) - YEAR(`date_of_birth`) > 30;
+
+SELECT \*
+FROM `students`
+WHERE `date_of_birth` < DATE_SUB(NOW(), INTERVAL 30 YEAR)
+ORDER BY `students`, `date_of_birth` DESC;
+
+SELECT _
+FROM `students`
+WHERE DATEDIFF(CURDATE, `date_of_birth`) > 30 _ 365.35
+ORDER BY `students`, `date_of_birth` DESC;
+
 ## task 4
 
 <!--  selezziona tutte le colonne della tabella courses e cerca solo i corsi del primo semestre e del primo anno -->
@@ -57,8 +84,20 @@ SELECT \*
 FROM `exams`
 WHERE `date` = '2020-06-20'
 AND `hour`
-BETWEEN '14:00:00'
+BETWEEN '14:00:
 AND '24:00:00';
+
+SELECT \*
+FROM `exams`
+WHERE `date` = '2020-06-20'
+AND TIME(hour) > `14:00:00`
+ORDER BY `hour` DESC
+
+SELECT \*
+FROM `exams`
+WHERE `date` = '2020-06-20'
+AND HOUR(`hour`) => 14
+ORDER BY `hour` DESC
 
 ## task 6
 
@@ -73,6 +112,10 @@ WHERE `level` = 'magistrale';
 <!-- mi dice quanti dipartimenti a l'univerita -->
 
 SELECT COUNT(\*)
+FROM `departments`;
+
+SELECT COUNT(`id`)
+AS `NumberOfDepartement`
 FROM `departments`;
 
 ## task 8
