@@ -107,9 +107,10 @@ WHERE `course_teacher`.`teacher_id` = 44;
 <!-- Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui sono iscritti e il relativo dipartimento, in ordine alfabetico per cognome e nome -->
 
 ```SQL
-SELECT `students`.`surname`, `students`.`name` , `degrees`.`*`
+SELECT `students`.`surname`, `students`.`name` , `degrees`.`name`, `departments`.`name`
 FROM `students`
 JOIN `degrees` ON `degrees`.`id` = `students`.`degree_id`
+JOIN `departments` ON `departments`.`id` = `degrees`.`department_id`
 ORDER BY `students`.`surname`, `students`.`name`;
 ```
 
@@ -119,4 +120,23 @@ ORDER BY `students`.`surname`, `students`.`name`;
 
 ```SQL
 
+SELECT `degrees`.`name` AS `Degrees`, `departments`.`name` AS `Departement`, `courses`.`name` AS `Courses`
+FROM `degrees`
+JOIN `departments` ON `departments`.`id` = `degrees`.`department_id`
+JOIN `courses` ON `degrees`.`id` = `courses`.`degree_id`;
+
+```
+
+# Task 6
+
+<!-- Selezionare tutti i docenti che insegnano nel Dipartimento di Matematica (54) -->
+
+```SQL
+SELECT `teachers`.`name`, `teachers`.`surname`, `departments`.`name`
+FROM `teachers`
+JOIN `course_teacher` ON `teachers`.`id` = `course_teacher`.`teacher_id`
+JOIN `courses` ON `courses`.`id` = `course_teacher`.`course_id`
+JOIN `degrees` ON `degrees`.`id` = `courses`.`degree_id`
+JOIN `departments` ON `departments`.`id` = `degrees`.`department_id`
+WHERE `degrees`.`department_id` = 5;
 ```
