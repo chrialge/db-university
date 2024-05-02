@@ -43,6 +43,18 @@ ORDER BY `exam_id` ASC;
 
 ```
 
+# Task 4
+
+<!-- Contare quanti corsi di laurea ci sono per ogni dipartimento -->
+
+```SQL
+
+SELECT COUNT(`department_id`), `department_id`
+FROM `degrees`
+GROUP BY `department_id`;
+
+```
+
 ## Joins
 
 1. Selezionare tutti gli studenti iscritti al Corso di Laurea in Economia
