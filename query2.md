@@ -31,6 +31,18 @@ FROM `teachers`
 GROUP BY `office_number`;
 ```
 
+# Task 3
+
+<!-- Calcolare la media dei voti di ogni appello d'esame -->
+
+```SQL
+SELECT ROUND(AVG(`vote`), 2), `exam_id`
+FROM `exam_student`
+GROUP BY `exam_id`
+ORDER BY `exam_id` ASC;
+
+```
+
 ## Joins
 
 1. Selezionare tutti gli studenti iscritti al Corso di Laurea in Economia
